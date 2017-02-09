@@ -1,0 +1,14 @@
+{
+  "account": {
+    "accessKey": "accessKey1",
+    "secretKey": "verySecretKey1",
+    "accountId": "123456789012"
+  },
+  "user": {
+    "accessKey": "accessKey2",
+    "secretKey": "verySecretKey2"
+  },
+  "s3Endpoint": "http://127.0.0.1:8000",
+  "iamEndpoint": "http://127.0.0.1:8600",
+  "utapiEndpoint": "http://127.0.0.1:8100"
+}

@@ -1,0 +1,27 @@
+{
+  "name": "s3-sample-client-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaurenSpiegel/ScalityS3SampleClientCode.git"
+  },
+  "author": "Lauren Spiegel",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/LaurenSpiegel/ScalityS3SampleClientCode/issues"
+  },
+  "homepage": "https://github.com/LaurenSpiegel/ScalityS3SampleClientCode#readme",
+  "dependencies": {
+    "arsenal": "scality/Arsenal#rel/6.3",
+    "async": "^2.1.4",
+    "aws-sdk": "^2.10.0",
+    "eslint": "^2.4.0",
+    "eslint-config-airbnb": "^6.0.0",
+    "eslint-config-scality": "scality/Guidelines"
+  }
+}
