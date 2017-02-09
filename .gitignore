@@ -3,3 +3,6 @@ config.json
 
 # NPM Modules
 node_modules
+
+# Notes
+notes.md
