@@ -10,16 +10,17 @@ const secretKey = configFile.account.secretKey;
 const endpointArr = configFile.utapiEndpoint.split(':');
 const port = endpointArr.pop();
 const host = endpointArr[1].slice(2);
+const millsecondsInHour = 3600000;
 
-function getStartTimestamp(unixTimestamp) {
-    const time = new Date(unixTimestamp);
+function getStartTimestamp(millisecondsBackInTime) {
+    const time = new Date(Date.now() - millisecondsBackInTime);
     const minutes = time.getMinutes();
     const timestamp = time.setMinutes((minutes - minutes % 15), 0, 0);
     return timestamp;
 }
 
-function getEndTimestamp(unixTimestamp) {
-    const time = new Date(unixTimestamp);
+function getEndTimestampCloseToNow() {
+    const time = new Date(Date.now());
     const minutes = time.getMinutes();
     const timestamp = time.setMinutes((minutes - minutes % 15) + 15, 0, -1);
     return timestamp;
@@ -66,6 +67,6 @@ function listBucketMetrics(buckets, timeRange) {
     request.write(JSON.stringify({ buckets, timeRange }));
     request.end();
 }
-const start = getStartTimestamp(1476232525320);
-const end = getEndTimestamp(1486610472970);
+const start = getStartTimestamp(millsecondsInHour);
+const end = getEndTimestampCloseToNow();
 listBucketMetrics(['superbucket', 'someotherbucket'], [start, end]);
