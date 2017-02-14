@@ -64,6 +64,19 @@ function createGroup(name) {
 }
 // createGroup(groupName);
 
+// Add user to group
+function addUserToGroup(groupName, userName) {
+    const addUserParams = {
+        GroupName: groupName,
+        UserName: userName,
+    };
+    iamClient.addUserToGroup(addUserParams, (err, data) => {
+        if (err) console.log('err:', err);
+        else console.log('data:', data);
+    });
+}
+// addUserToGroup(groupName, userName);
+
 // Create policy
 function createPolicy(policyDoc, policyName) {
     const createPolicyParams = {
